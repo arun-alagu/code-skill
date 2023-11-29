@@ -1,0 +1,191 @@
+{% extends "layouts/base.html" %}
+{% block head %}<title>Contest Edit</title>{% endblock %}
+{% block body %}
+<div class="container mt-4 border">
+    <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="#">Manage Contest</a></li>
+          <li class="breadcrumb-item active" aria-current="page"><a href="#">Contest Name</a></li>
+        </ol>
+      </nav>
+    </div>
+      <div class="container mt-4 border">
+    <ul class="nav nav-tabs mt-2 mb-3" id="myTab0" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link active"
+            id="home-tab0"
+            data-bs-toggle="tab"
+            data-bs-target="#home0"
+            type="button"
+            role="tab"
+            aria-controls="home"
+            aria-selected="true">
+            Details
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link"
+            id="profile-tab0"
+            data-bs-toggle="tab"
+            data-bs-target="#profile0"
+            type="button"
+            role="tab"
+            aria-controls="profile"
+            aria-selected="false">
+            MCQ
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link"
+            id="contact-tab0"
+            data-bs-toggle="tab"
+            data-bs-target="#contact0"
+            type="button"
+            role="tab"
+            aria-controls="contact"
+            aria-selected="false">
+            Coding Questions
+          </button>
+        </li>
+      </ul>
+      <div class="tab-content" id="myTabContent0">
+        <div
+          class="tab-pane fade show active"
+          id="home0"
+          role="tabpanel"
+          aria-labelledby="home-tab0">
+        <h3>Contest Details</h3>
+        <p>Customize your contest by providing more information needed to create your landing page. Your contest will only be available to those who have access to the contest URL.</p>
+        <div class="row g-3 align-items-center mb-2">
+            <div class="col-2">
+                <label for="contestName" class="col-form-label">Contest Name<span class="fw-bold text-danger"> *</span></label>
+              </div>
+              <div class="col-5">
+                <input type="test" id="contestName" class="form-control" aria-describedby="passwordHelpInline">
+              </div>
+          </div>
+          <div class="row g-3 align-items-center mb-2">
+            <div class="col-2">
+                <label for="startDate" class="col-form-label">Start Date<span class="fw-bold text-danger"> *</span></label>
+              </div>
+              <div class="col-5">
+                <input type="date" id="startDate" class="form-control" aria-describedby="passwordHelpInline">
+              </div>
+          </div>
+          <div class="row g-3 align-items-center mb-2">
+            <div class="col-2">
+                <label for="endDate" class="col-form-label">End Date<span class="fw-bold text-danger"> *</span></label>
+              </div>
+              <div class="col-5">
+                <input type="date" id="endDate" class="form-control" aria-describedby="passwordHelpInline">
+              </div>
+          </div>
+          <div class="row g-3 align-items-center mb-2">
+            <div class="col-2">
+                <label for="creatorName" class="col-form-label">Creator Name<span class="fw-bold text-danger"> *</span></label>
+              </div>
+              <div class="col-5">
+                <input type="test" id="creatorName" class="form-control" aria-describedby="passwordHelpInline">
+              </div>
+          </div>
+          <div class="row g-3 align-items-center mb-2">
+              <div class="col text-center">
+                <a class="btn btn-primary" href="#">Save</a>
+              </div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="profile0" role="tabpanel" aria-labelledby="profile-tab0">
+          <!-- Tab 2 content -->
+          <div class="row mt-4">
+            <div class="col my-auto">
+            Questions you can edit are below. 
+            </div>
+            <div class="col text-end">
+            <a class="btn btn-success" href="#">Create Question</a>
+            </div>
+            </div>
+          <table class="table table-hover mt-3 border">
+            <thead>
+            <tr class="table">
+              <th  class="col-1" scope="col">#</th>
+              <th  class="col-auto" scope="col">Questions</th>
+              <th  class="col-3" scope="col">Score</th>
+               <th class="col-2" scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="vertical-align:middle;">
+              <td>1</td>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td><a class="btn btn-outline-primary me-2" href="#">Edit</a>
+                <a class="btn btn-outline-danger" href="#">Delete</a>
+              </td>
+            </tr>
+            <tr style="vertical-align:middle;">
+              <td>2</td>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td><a class="btn btn-outline-danger" href="#">Delete</a>        </td>
+            </tr>
+            <tr style="vertical-align:middle;">
+              <td>3</td>
+              <td>Larry the Bird</td>
+              <td>@twitter</td>
+              <td><a class="btn btn-outline-danger" href="#">Delete</a></td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+        <div class="tab-pane fade" id="contact0" role="tabpanel" aria-labelledby="contact-tab0">
+          <!-- Tab 3 content -->
+          <div class="row mt-4">
+            <div class="col my-auto">
+            Coding questions you can edit are below. 
+            </div>
+            <div class="col text-end">
+            <a class="btn btn-success" href="#">Create Question</a>
+            </div>
+            </div>
+          <table class="table table-hover mt-3 border">
+            <thead>
+            <tr class="table">
+              <th  class="col-1" scope="col">#</th>
+              <th  class="col-auto" scope="col">Questions</th>
+              <th  class="col-3" scope="col">Score</th>
+               <th class="col-2" scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="vertical-align:middle;">
+              <td>1</td>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td><a class="btn btn-outline-primary me-2" href="#">Edit</a>
+                <a class="btn btn-outline-danger" href="#">Delete</a>
+              </td>
+            </tr>
+            <tr style="vertical-align:middle;">
+              <td>2</td>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td><a class="btn btn-outline-danger" href="#">Delete</a>        </td>
+            </tr>
+            <tr style="vertical-align:middle;">
+              <td>3</td>
+              <td>Larry the Bird</td>
+              <td>@twitter</td>
+              <td><a class="btn btn-outline-danger" href="#">Delete</a></td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+
+    
+    
+    </div>
+    <!-- <script src="{{url_for('static',filename='js/administration.js')}}"></script> -->
+{% endblock %}

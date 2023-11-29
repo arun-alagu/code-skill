@@ -1,0 +1,75 @@
+{% extends "/layouts/base.html" %}
+{% block head %}<title>Register</title>{% endblock %}
+{% block body %}
+<div class="mt-5 container-fluid d-flex align-items-center justify-content-center">
+<div class="container">
+    <div class="row justify-content-center">
+      <div class="col-xl-5 col-md-8 border rounded shadow">
+        <form class="bg-white p-4" name="register_form" method="POST" action="/register/">
+          {{ form.csrf_token }}
+          <!-- Email input -->
+          <div class="form-outline text-center mb-4">
+            <h5>Sign Up</h5>
+          </div>
+          {% for message in get_flashed_messages() %}
+          <div class="alert alert-danger alert-dismissible fade show mb-4" role="alert">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+          {% endfor %}
+          <div class="form-outline mb-4">
+            <div class="form-floating">
+            {{ form.email(class="form-control",placeholder="Email") }} {{ form.email.label}}
+            <!-- <input type="email" id="regEmail" name="regEmail" class="form-control" />
+            <label class="form-label" for="regEmail">Email address</label> -->
+          </div>
+          {% if form.email.errors %}
+          {% for error in form.email.errors %}
+          <div class="form-text text-danger">
+            {{ error }}
+          </div>
+          {% endfor %}
+          {% endif %}
+        </div>
+          <!-- Password input -->
+          <div class="form-outline mb-4">
+          <div class="form-floating ">
+            {{ form.password(class="form-control",placeholder="Password") }} {{ form.password.label}} 
+            <!-- <input type="password" id="regPass" name="regPass" class="form-control" />
+            <label class="form-label" for="regPass">Password</label> -->
+          </div>
+          {% if form.password.errors %}
+          {% for error in form.password.errors %}
+          <div class="form-text text-danger">
+            {{ error }}
+          </div>
+          {% endfor %}
+          {% endif %}
+
+        </div>
+          <div class="form-outline mb-4">
+          <div class="form-floating ">
+             {{ form.confirmPassword(class="form-control",placeholder="Repeat Password") }} {{ form.confirmPassword.label(class="form-label") }}
+            <!-- <input type="password" id="regcPass" name="regcPass" class="form-control" />
+            <label class="form-label" for="regcPass">Confirm Password</label> -->
+          </div>
+          {% if form.confirmPassword.errors %}
+          {% for error in form.confirmPassword.errors %}
+          <div class="form-text text-danger">
+            {{ error }}
+          </div>
+          {% endfor %}
+          {% endif %}
+
+        </div>
+          <!-- Submit button -->
+          <div class="text-center">
+          {{ form.submit(class="btn btn-dark btn-block") }}
+          <!-- <button type="submit" class="btn btn-primary btn-block">Sign up</button> -->
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  </div>
+  {% endblock %}
